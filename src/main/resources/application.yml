@@ -1,0 +1,19 @@
+ config :
+  resources :
+     about :
+        serviceName : 'aboutService'
+        methods : 
+          - 'LIST'
+        representations :
+          -
+            mediaTypes :
+              - 'application/v1+json'
+            decorator : 'com.rest.api.decorator.about.v1.aboutDecorator'  
+          -
+            mediaTypes :
+              - 'application/json'
+              - 'application/v2+json'
+            decorator : 'com.rest.api.decorator.about.v2.aboutDecorator'  
+        
+     test : 
+        serviceName : 'testService'  
